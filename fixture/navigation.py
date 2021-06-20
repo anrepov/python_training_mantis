@@ -8,6 +8,11 @@ class NavigationHelper:
         if not wd.current_url.endswith("my_view_page.php"):
             wd.find_element_by_link_text("My View").click()
 
+    def open_manage_projects_page(self):
+        wd = self.app.wd
+        if not wd.current_url.endswith("manage_proj_page.php"):
+            wd.get(self.app.base_url + "/manage_proj_page.php")
+
     def open_start_page(self):
         wd = self.app.wd
         wd.get(self.app.base_url)
